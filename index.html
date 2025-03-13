@@ -15,9 +15,7 @@
       <h1>welcome to DOM</h1>
     </header>
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus
-    consequatur similique recusandae rem ad, cum eum voluptates culpa quae totam
-    quisquam vel impedit asperiores. Quis inventore error dicta nesciunt
-    ducimus!
+    consequatur similique recusandae rem ad, cum eum voluptates culpa quae 
 
     <h1>My Awesome DOM de baba</h1>
 
@@ -28,7 +26,7 @@
         <li>bonobash</li>
         <li>dom de baba</li>
       </ul>
-      <h1 id="Fruits-title">Fruits I like</h1>
+      <h1 id="fruits-title">Fruits I like</h1>
       <ul>
         <li>apple</li>
         <li>banana</li>
@@ -36,12 +34,31 @@
         <li>lichi</li>
       </ul>
       <h1>Places I like to visit</h1>
-      <li>Sondorbon</li>
-      <li>bandorban</li>
-      <li>karaban</li>
-      <li>shalban</li>
+      <ul>
+        <li class="places">Sondorbon</li>
+        <li class="places">bandorban</li> 
+        <li class="places">karaban</li>
+        <li class="places">shalban</li>
+      </ul>
     </section>
-    <script src="js/dom.js"></script>
+    <script src="js/dom.js"></script>  
+    <script>
+      // ul = document.getElementsByTagName('ul');
+      // console.log(ul);
+      
+      // const allHeadings = document.getElementsByTagName('li');
+      // for(const h1 of allHeadings){
+      //   console.log(h1.innerText);
+      // }
+
+      // const fruits =document.getElementById('fruits-title');
+      // fruits.style.backgroundColor:#red;
+
+      const places =document.getElementsByClassName('places');
+      for(const pl of places){
+        console.log(pl.innerText);
+      }
+    </script>
 
     </script>
   </body>
