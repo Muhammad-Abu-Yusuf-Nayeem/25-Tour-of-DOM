@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document.getElementById Examples</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        display: inline-block;
+      }
+      p {
+        color: blue;
+        font-size: 16px;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header">Welcome to My Page</h1>
+    <p id="para">This is a paragraph of text.</p>
+    <button id="button" onclick="changeContent()">Click me</button>
+    <div
+      id="colorBox"
+      style="width: 100px; height: 100px; background-color: lightblue"
+    ></div>
+    <input type="text" id="inputBox" placeholder="Type something here" />
+
+    <script>
+      // Example 1: Change text content of an element
+      document.getElementById("header").textContent = "Hello, World!";
+
+      // Example 2: Change background color of an element
+      document.getElementById("colorBox").style.backgroundColor = "green";
+
+      // Example 3: Modify the innerHTML of an element
+      document.getElementById("para").innerHTML =
+        "The paragraph text has been changed!";
+
+      // Example 4: Change the value of an input element
+      document.getElementById("inputBox").value =
+        "This is a new value in the input box";
+
+      // Example 5: Add an event listener to the button (calling a function)
+      function changeContent() {
+        document.getElementById("button").textContent = "You clicked me!";
+      }
+    </script>
+    <!-- Class -->
+    <section>
+      <h1>document.getElementsByClassName Examples</h1>
+
+      <div class="box" style="background-color: lightblue"></div>
+      <div class="box" style="background-color: lightgreen"></div>
+      <div class="box" style="background-color: lightcoral"></div>
+      <div class="box" style="background-color: lightgoldenrodyellow"></div>
+
+      <button id="changeAllBoxes">Change All Box Colors</button>
+      <button id="hideAllBoxes">Hide All Boxes</button>
+      <button id="showAllBoxes">Show All Boxes</button>
+      <button id="toggleBoxVisibility">Toggle Box Visibility</button>
+
+      <script>
+        // Get all elements with class "box"
+        let boxes = document.getElementsByClassName("box");
+
+        // Example 1: Change background color of all boxes
+        function changeAllBoxesColor() {
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.backgroundColor = "purple";
+          }
+        }
+
+        // Example 2: Change background color of a specific box (2nd box in list)
+        boxes[1].style.backgroundColor = "orange";
+
+        // Example 3: Add a border to all boxes
+        function addBorderToBoxes() {
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.border = "2px solid black";
+          }
+        }
+
+        // Example 4: Change width of the first box
+        boxes[0].style.width = "150px";
+
+        // Example 5: Hide the third box
+        boxes[2].style.display = "none";
+
+        // Example 6: Show the third box (it was hidden)
+        function showAllBoxes() {
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.display = "block";
+          }
+        }
+
+        // Example 7: Toggle visibility of all boxes
+        function toggleBoxVisibility() {
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.display =
+              boxes[i].style.display === "none" ? "block" : "none";
+          }
+        }
+
+        // Example 8: Change height of all boxes
+        function changeAllBoxesHeight() {
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.height = "150px";
+          }
+        }
+
+        // Example 9: Add text inside each box
+        function addTextToBoxes() {
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].innerHTML = "Box " + (i + 1);
+          }
+        }
+
+        // Example 10: Change the box width on hover (using event listeners)
+        function addHoverEffect() {
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].addEventListener("mouseover", function () {
+              boxes[i].style.width = "200px";
+            });
+            boxes[i].addEventListener("mouseout", function () {
+              boxes[i].style.width = "100px";
+            });
+          }
+        }
+
+        // Button click event handlers
+        document.getElementById("changeAllBoxes").onclick = changeAllBoxesColor;
+        document.getElementById("hideAllBoxes").onclick = function () {
+          for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.display = "none";
+          }
+        };
+        document.getElementById("showAllBoxes").onclick = showAllBoxes;
+        document.getElementById("toggleBoxVisibility").onclick =
+          toggleBoxVisibility;
+
+        // Call the hover effect function
+        addHoverEffect();
+      </script>
+    </section>
+    <!-- Tag Name -->
+    <section>
+      
+    </section>
+  </body>
+</html>
