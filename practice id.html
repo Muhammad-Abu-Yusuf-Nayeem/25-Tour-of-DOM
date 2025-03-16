@@ -152,7 +152,117 @@
     </section>
     <!-- Tag Name -->
     <section>
-      
+      <h1>document.getElementsByTagName Examples</h1>
+
+      <div style="background-color: lightblue"></div>
+      <div style="background-color: lightgreen"></div>
+      <div style="background-color: lightcoral"></div>
+      <div style="background-color: lightyellow"></div>
+
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+      <p>This is a third paragraph.</p>
+
+      <button id="changeDivs">Change All Divs' Color</button>
+      <button id="changeParagraphs">Change All Paragraphs' Text</button>
+      <button id="hideDivs">Hide All Divs</button>
+      <button id="showDivs">Show All Divs</button>
+      <button id="addBordersToDivs">Add Borders to All Divs</button>
+      <button id="changeFirstParagraphText">Change First Paragraph Text</button>
+      <button id="addTextToDivs">Add Text to All Divs</button>
+
+      <script>
+        // Get all div and p elements
+        let divs = document.getElementsByTagName("div");
+        let paragraphs = document.getElementsByTagName("p");
+
+        // Example 1: Change background color of all divs
+        function changeDivsColor() {
+          for (let i = 0; i < divs.length; i++) {
+            divs[i].style.backgroundColor = "purple";
+          }
+        }
+
+        // Example 2: Change the text content of all paragraphs
+        function changeParagraphsText() {
+          for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].textContent = "This paragraph has been changed!";
+          }
+        }
+
+        // Example 3: Hide all div elements
+        function hideAllDivs() {
+          for (let i = 0; i < divs.length; i++) {
+            divs[i].style.display = "none";
+          }
+        }
+
+        // Example 4: Show all div elements
+        function showAllDivs() {
+          for (let i = 0; i < divs.length; i++) {
+            divs[i].style.display = "inline-block";
+          }
+        }
+
+        // Example 5: Add borders to all divs
+        function addBordersToDivs() {
+          for (let i = 0; i < divs.length; i++) {
+            divs[i].style.border = "2px solid black";
+          }
+        }
+
+        // Example 6: Change text of the first paragraph
+        paragraphs[0].textContent = "This is the new first paragraph text.";
+
+        // Example 7: Add text to all divs
+        function addTextToDivs() {
+          for (let i = 0; i < divs.length; i++) {
+            divs[i].innerHTML = "Div " + (i + 1);
+          }
+        }
+
+        // Example 8: Change width of all divs
+        function changeWidthOfDivs() {
+          for (let i = 0; i < divs.length; i++) {
+            divs[i].style.width = "150px";
+          }
+        }
+
+        // Example 9: Change the color of all paragraphs to red
+        function changeParagraphsColor() {
+          for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.color = "red";
+          }
+        }
+
+        // Example 10: Toggle visibility of all divs
+        function toggleDivVisibility() {
+          for (let i = 0; i < divs.length; i++) {
+            divs[i].style.display =
+              divs[i].style.display === "none" ? "inline-block" : "none";
+          }
+        }
+
+        // Button click event handlers
+        document.getElementById("changeDivs").onclick = changeDivsColor;
+        document.getElementById("changeParagraphs").onclick =
+          changeParagraphsText;
+        document.getElementById("hideDivs").onclick = hideAllDivs;
+        document.getElementById("showDivs").onclick = showAllDivs;
+        document.getElementById("addBordersToDivs").onclick = addBordersToDivs;
+        document.getElementById("changeFirstParagraphText").onclick =
+          function () {
+            paragraphs[0].textContent =
+              "This is the changed first paragraph text!";
+          };
+        document.getElementById("addTextToDivs").onclick = addTextToDivs;
+        document.getElementById("changeWidthOfDivs").onclick =
+          changeWidthOfDivs;
+        document.getElementById("changeParagraphsColor").onclick =
+          changeParagraphsColor;
+        document.getElementById("toggleDivVisibility").onclick =
+          toggleDivVisibility;
+      </script>
     </section>
   </body>
 </html>
