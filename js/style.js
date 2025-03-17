@@ -15,3 +15,4 @@ placesContainer.style.backgroundColor = "yellowgreen";
 const DOM = document.getElementById("domDE");
 DOM.classList.add("yellow-bg");
 DOM.classList.add("text-center");
+
